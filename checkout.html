@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout – Garden Bait</title>
+    <style>
+      :root {
+        --primary: #2d6a4f;
+        --secondary: #52b788;
+        --accent: #d8f3dc;
+        --light: #fdfdfd;
+        --dark: #081c15;
+        --header-height: 80px;
+        --max-width: 1200px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        color: var(--dark);
+        background-color: var(--light);
+      }
+      header {
+        background-color: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        height: var(--header-height);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+      header img {
+        height: 60px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: opacity 0.2s ease;
+      }
+      nav a:hover {
+        opacity: 0.8;
+      }
+      main {
+        margin-top: calc(var(--header-height) + 20px);
+        max-width: var(--max-width);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+      }
+      h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+      .checkout-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #ddd;
+      }
+      .total {
+        text-align: right;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        color: var(--primary);
+      }
+      .complete-btn {
+        display: block;
+        margin: 2rem 0;
+        background-color: var(--secondary);
+        color: white;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        width: 250px;
+        margin-left: auto;
+      }
+      .complete-btn:hover {
+        background-color: var(--primary);
+      }
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="Garden Bait logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Checkout</h2>
+      <div id="checkout-items"></div>
+      <div class="total">Total: <span id="checkout-total">$0.00</span></div>
+      <p style="margin-top: 1rem;">This is a demo checkout. In a real application you would collect payment and shipping information here.</p>
+      <a href="#" class="complete-btn" onclick="alert('Thank you for your purchase!'); localStorage.removeItem('cart'); window.location.href='index.html'; return false;">Complete Purchase</a>
+    </main>
+    <footer>
+      &copy; 2025 Garden Bait. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

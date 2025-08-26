@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products – Garden Bait</title>
+    <style>
+      :root {
+        --primary: #2d6a4f;
+        --secondary: #52b788;
+        --accent: #d8f3dc;
+        --light: #fdfdfd;
+        --dark: #081c15;
+        --max-width: 1200px;
+        --header-height: 80px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        color: var(--dark);
+        background-color: var(--light);
+      }
+      header {
+        background-color: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        height: var(--header-height);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+      header img {
+        height: 60px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: opacity 0.2s ease;
+      }
+      nav a:hover {
+        opacity: 0.8;
+      }
+      main {
+        margin-top: calc(var(--header-height) + 20px);
+        max-width: var(--max-width);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+      }
+      h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .product-card {
+        background-color: var(--accent);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .product-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 0.5rem;
+      }
+      .product-card h3 {
+        margin: 0.5rem 0;
+        color: var(--primary);
+      }
+      .product-card p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+      .product-card button {
+        background-color: var(--secondary);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      .product-card button:hover {
+        background-color: var(--primary);
+      }
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="Garden Bait logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <div class="product-card" id="seedmix-card">
+          <img src="product-seeds.png" alt="Premium Seed Mix" />
+          <h3>Premium Seed Mix</h3>
+          <p>A high‑quality mix of vegetable, herb and flower seeds.</p>
+          <p><strong>$9.99</strong></p>
+          <button onclick="addToCart('seedmix','Premium Seed Mix',9.99,5.00)">Add to Cart</button>
+        </div>
+        <div class="product-card" id="trowel-card">
+          <img src="product-trowel.png" alt="Garden Trowel" />
+          <h3>Garden Trowel</h3>
+          <p>Durable stainless steel trowel with comfortable wooden handle.</p>
+          <p><strong>$14.99</strong></p>
+          <button onclick="addToCart('trowel','Garden Trowel',14.99,7.50)">Add to Cart</button>
+        </div>
+        <div class="product-card" id="pots-card">
+          <img src="product-pots.png" alt="Ceramic Pot Set" />
+          <h3>Ceramic Pot Set</h3>
+          <p>Set of three stylish ceramic pots perfect for indoor plants.</p>
+          <p><strong>$24.99</strong></p>
+          <button onclick="addToCart('pots','Ceramic Pot Set',24.99,12.00)">Add to Cart</button>
+        </div>
+        <div class="product-card" id="fertilizer-card">
+          <img src="product-fertilizer.png" alt="Organic Fertilizer" />
+          <h3>Organic Fertilizer</h3>
+          <p>All‑natural fertilizer to promote healthy plant growth.</p>
+          <p><strong>$12.99</strong></p>
+          <button onclick="addToCart('fertilizer','Organic Fertilizer',12.99,6.00)">Add to Cart</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      &copy; 2025 Garden Bait. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

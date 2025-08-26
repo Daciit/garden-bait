@@ -186,8 +186,11 @@
       <img src="logo.png" alt="Garden Bait logo" />
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#shop">Shop</a></li>
+          <li><a href="index.html">Home</a></li>
+          <!-- Link to the products catalogue -->
+          <li><a href="products.html">Products</a></li>
+          <!-- Cart link shows number of items dynamically -->
+          <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -201,20 +204,38 @@
       </div>
     </section>
 
-    <section class="section" id="shop">
-      <h2>What We Offer</h2>
+    <!-- Categories section highlights our product categories -->
+    <section class="section" id="categories">
+      <h2>Shop by Category</h2>
       <div class="cards">
         <div class="card">
-          <h3>Quality Seeds</h3>
-          <p>Choose from a wide variety of vegetable, herb, and flower seeds chosen for their resilience and yield.</p>
+          <a href="products.html?category=seeds" style="text-decoration:none; color:inherit;">
+            <!-- Category images live at the project root for GitHub uploads -->
+            <img src="seeds-category.png" alt="Seeds category" style="width:100%; height:150px; object-fit:cover; border-radius:8px 8px 0 0;"/>
+            <h3>Seeds</h3>
+            <p>Browse a curated selection of vegetable, herb and flower seeds to start your garden.</p>
+          </a>
         </div>
         <div class="card">
-          <h3>Reliable Tools</h3>
-          <p>Browse durable hand tools, trowels, pruning shears and more &mdash; everything you need to cultivate your garden.</p>
+          <a href="products.html?category=tools" style="text-decoration:none; color:inherit;">
+            <img src="tools-category.png" alt="Tools category" style="width:100%; height:150px; object-fit:cover; border-radius:8px 8px 0 0;"/>
+            <h3>Tools</h3>
+            <p>Discover durable trowels, pruners, shovels and more to make gardening easier.</p>
+          </a>
         </div>
         <div class="card">
-          <h3>Expert Support</h3>
-          <p>Get tips and guidance from our experienced gardeners to make your green space flourish.</p>
+          <a href="products.html?category=pots" style="text-decoration:none; color:inherit;">
+            <img src="pots-category.png" alt="Pots category" style="width:100%; height:150px; object-fit:cover; border-radius:8px 8px 0 0;"/>
+            <h3>Pots</h3>
+            <p>Find decorative and functional planters and pots for every type of plant.</p>
+          </a>
+        </div>
+        <div class="card">
+          <a href="products.html?category=fertilizers" style="text-decoration:none; color:inherit;">
+            <img src="fertilizer-category.png" alt="Fertilizers category" style="width:100%; height:150px; object-fit:cover; border-radius:8px 8px 0 0;"/>
+            <h3>Fertilizers</h3>
+            <p>Nurture your plants with organic and nutrient-rich fertilizers and soil amendments.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -230,5 +251,8 @@
     <footer>
       &copy; 2025 Garden Bait. All rights reserved.
     </footer>
+
+    <!-- Load common scripts for cart functionality -->
+    <script src="script.js"></script>
   </body>
 </html>
