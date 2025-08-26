@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Bait &ndash; Gardening Solutions</title>
+    <!-- Simple internal stylesheet keeps the project self‑contained.  -->
+    <style>
+      /* CSS variables to centralise colours and spacing */
+      :root {
+        --primary: #2d6a4f;
+        --secondary: #52b788;
+        --accent: #d8f3dc;
+        --light: #fdfdfd;
+        --dark: #081c15;
+        --max-width: 1200px;
+        --header-height: 80px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: var(--light);
+      }
+
+      header {
+        background-color: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        height: var(--header-height);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+
+      header img {
+        height: 60px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: opacity 0.2s ease;
+      }
+
+      nav a:hover {
+        opacity: 0.8;
+      }
+
+      .hero {
+        margin-top: var(--header-height);
+        height: 70vh;
+        /* The hero image lives at the repository root once uploaded */
+        background-image: url('hero.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--dark);
+        position: relative;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-button {
+        background-color: var(--secondary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+      }
+
+      .cta-button:hover {
+        background-color: var(--primary);
+      }
+
+      .section {
+        max-width: var(--max-width);
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      .section h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background-color: var(--accent);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+
+      .card h3 {
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+      }
+
+      .card p {
+        font-size: 0.9rem;
+        color: #333;
+      }
+
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 600px) {
+        header img {
+          height: 50px;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- The logo image lives at the root of the repository once uploaded -->
+      <img src="logo.png" alt="Garden Bait logo" />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Grow Your Garden</h1>
+        <p>Discover premium gardening tools, seeds and supplies to help your garden thrive.</p>
+        <button class="cta-button" onclick="document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })">Shop Now</button>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <h2>What We Offer</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Quality Seeds</h3>
+          <p>Choose from a wide variety of vegetable, herb, and flower seeds chosen for their resilience and yield.</p>
+        </div>
+        <div class="card">
+          <h3>Reliable Tools</h3>
+          <p>Browse durable hand tools, trowels, pruning shears and more &mdash; everything you need to cultivate your garden.</p>
+        </div>
+        <div class="card">
+          <h3>Expert Support</h3>
+          <p>Get tips and guidance from our experienced gardeners to make your green space flourish.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Get In Touch</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto;">
+        Have questions or need help placing an order? Our team is here to help. Send us an email at
+        <a href="mailto:info@gardenbait.com" style="color: var(--primary); text-decoration: underline;">info@gardenbait.com</a> and we'll get back to you as soon as possible.
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2025 Garden Bait. All rights reserved.
+    </footer>
+  </body>
+</html>
